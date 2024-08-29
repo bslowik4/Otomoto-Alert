@@ -2,6 +2,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import smtplib
+import os
 
 def load_config():
     with open('config.json') as f:
@@ -57,10 +58,10 @@ if new_number is not None:
             file.write(str(new_number))
 
         subject = "Website Number Changed"
-        body = f"The number in 'Liczba ogłoszeń:' has changed to {new_number} on {url}."
+        body = f"The number in 'Liczba ogloszen:' has changed to {new_number} on {url}."
         send_email(subject, body, config["EMAIL_USER"])
 
-        print(f"The number in 'Liczba ogłoszeń:' has changed to {new_number}. Email sent!")
+        print(f"The number in 'Liczba ogloszen:' has changed to {new_number}. Email sent!")
     else:
         print("No changes detected.")
 else:
