@@ -23,7 +23,7 @@ try:
 except FileNotFoundError:
     old_number = None
 
-current_content = requests.get(url).text
+current_content = requests.get(url). 
 
 new_number = extract_number_from_content(current_content)
 
