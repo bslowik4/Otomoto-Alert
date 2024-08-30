@@ -72,6 +72,8 @@ def check_website():
 
 schedule.every().hour.do(check_website)
 
+check_website()
+
 while True:
     schedule.run_pending()
     time.sleep(1)
